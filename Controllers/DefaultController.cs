@@ -41,6 +41,7 @@ namespace ObserverDesignPattern.Upschool.Controllers
             var result = await _userManager.CreateAsync(appUser, userRegisterVM.Password);
             if (result.Succeeded)
             {
+                _userObserverSubject.NotifyObserver(appUser);
                 ViewBag.message = "Üyelik sistemi başarılı bir şekilde oluşturuldu.";
             }
             else

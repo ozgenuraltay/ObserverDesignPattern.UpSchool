@@ -21,7 +21,7 @@ namespace ObserverDesignPattern.Upschool.ObserverDesignPattern
 
         public void CreateUser(AppUser appUser)
         {
-            var logger = _serviceProvider.GetRequiredService<ILogger<UserObserverCreateDiscount>>();
+            var logger = _serviceProvider.GetRequiredService<ILogger<UserObserverSendMail>>();
             MimeMessage mimeMessage = new MimeMessage();
 
             MailboxAddress mailboxAddressFrom = new MailboxAddress("Admin Observer","testozge8@gmail.com");
@@ -38,7 +38,7 @@ namespace ObserverDesignPattern.Upschool.ObserverDesignPattern
 
             SmtpClient client = new SmtpClient();
             client.Connect("smtp.gmail.com", 587, false);
-            client.Authenticate("testozge8@gmail.com", "enodxsnicrvxqoap");
+            client.Authenticate("testozge8@gmail.com", ""); //ikinci değişken:mail uygulama şifresi
             client.Send(mimeMessage);
             client.Disconnect(true);
 
