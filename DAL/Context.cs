@@ -11,7 +11,7 @@ namespace ObserverDesignPattern.Upschool.DAL
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=LAPTOP-8GBIAO0U\\SQLEXPRESS;Database=DbChainOfResponsibilityUPS;integrated security=true");
+            optionsBuilder.UseSqlServer("Server=LAPTOP-8GBIAO0U\\SQLEXPRESS;Database=DbObserverDesignPattern;integrated security=true");
         }
         public DbSet<Discount> Discounts { get; set; }
     }
